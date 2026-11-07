@@ -1,40 +1,24 @@
-# Examen Final · Desarrollo Web 036 · Variante B (recetas)
+# Catálogo de recetas
 
-Proyecto inicial de la **III Serie**. Compila y se ejecuta, pero las pantallas **no están conectadas a la API**:
-su trabajo es completar la lógica marcada con comentarios `TODO` numerados.
+Aplicación web para iniciar sesión, explorar recetas, consultar sus detalles y crear o eliminar recetas.
 
 ## Cómo empezar
 
 ```bash
 npm install
-cp .env.example .env
 npm run dev
 ```
 
-La app abre en `http://localhost:5173`. La dirección de la API (`https://dummyjson.com`) ya está en `src/config.ts`.
-Usuario de prueba de la API: `emilys` / `emilyspass`.
+La app abre en `http://localhost:5173`. La dirección de la API (`https://dummyjson.com`) está en `src/config.ts`.
+Puede iniciar sesión con el usuario de prueba `emilys` y la contraseña `emilyspass`.
 
-## Cómo encontrar lo que debe completar
+## Funcionalidades
 
-En VS Code use **Buscar en archivos** (Ctrl+Mayús+F) con la palabra `TODO`. Cada comentario indica el número
-del requisito del enunciado y qué debe hacer. Los archivos con TODO son:
-
-| TODO | Archivo |
-| --- | --- |
-| 1.1 | `src/pages/LoginPage.tsx`, `src/services/authService.ts` |
-| 1.2 | `src/store/authStore.ts` |
-| 1.3 | `src/services/api.ts`, `src/services/authService.ts` |
-| 1.4 | `src/components/ProtectedRoute.tsx`, `src/App.tsx` |
-| 1.5, 2.3, 4.4, 5.2, 6.1 | `src/pages/RecipesPage.tsx` |
-| 2.1, 3.1, 4.3, 4.4 | `src/services/recipeService.ts` |
-| 2.2, 3.1, 4.3, 4.4 | `src/hooks/useRecipes.ts` |
-| 3.1, 3.2, 3.3 | `src/pages/RecipeDetailPage.tsx` (`fichaText` ya viene hecha en `src/utils/ficha.ts`) |
-| 4.1, 4.2, 4.3 | `src/components/RecipeForm.tsx` |
-| 5.1 | `src/utils/errorHandler.ts` |
-| 5.3 | `src/App.tsx` |
-
-Ya vienen hechos y no debe modificarlos: las tarjetas, la paginación, la página 404, el `ErrorBoundary`,
-los tipos de la API (`src/types`), la dirección de la API (`src/config.ts`) y los componentes de shadcn/ui.
+- Autenticación con sesión persistente y renovación de tokens.
+- Catálogo paginado y búsqueda sincronizados con la URL.
+- Detalle de recetas y descarga de imagen y ficha.
+- Creación con validación de campos y carga opcional de imágenes; eliminación con confirmación.
+- Estados de error con mensajes en español y opción para reintentar.
 
 ## Comandos
 
